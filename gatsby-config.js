@@ -99,6 +99,13 @@ module.exports = {
         update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
       },
     },
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        allPageHeaders: [
+          'Link: <https://images.ctfassets.net>; rel=preconnect',
+        ],
+      },
+    },
   ],
 }
