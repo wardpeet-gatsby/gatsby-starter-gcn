@@ -80,7 +80,11 @@ const Card = ({
         <Post featured={featured}>
           <Link to={`${props.basePath}/${slug}/`}>
             <StyledImg
-              fluid={heroImage.fluid}
+              fluid={
+                heroImage.localFile
+                  ? heroImage.localFile.childImageSharp.fluid
+                  : heroImage.fluid
+              }
               backgroundColor={'#eeeeee'}
               loading={featured ? 'eager' : 'lazy'}
             />

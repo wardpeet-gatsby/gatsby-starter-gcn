@@ -15,6 +15,12 @@ try {
   }
 }
 
+console.log(
+  process.env.NODE_ENV === 'development'
+    ? contentfulConfig.development
+    : contentfulConfig.production
+)
+
 module.exports = {
   siteMetadata: {
     title: 'GCN',
@@ -92,13 +98,15 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-schema-snapshot`,
-      options: {
-        path: `./src/gatsby/schema/schema.gql`,
-        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-schema-snapshot`,
+    //   options: {
+    //     path: `./src/gatsby/schema/schema.gql`,
+    //     update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
+    //   },
+    // },
     'gatsby-plugin-netlify',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }

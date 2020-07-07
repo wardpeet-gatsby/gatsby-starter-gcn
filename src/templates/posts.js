@@ -65,8 +65,12 @@ export const query = graphql`
           publishDate(formatString: "MMMM DD, YYYY")
           heroImage {
             title
-            fluid(maxWidth: 1800) {
-              ...GatsbyContentfulFluid_withWebp
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1800) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
             }
             ogimg: resize(width: 1800) {
               src

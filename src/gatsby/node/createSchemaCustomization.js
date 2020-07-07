@@ -7,32 +7,32 @@
 */
 
 module.exports = ({ actions }) => {
-  const typeDefs = `
-    type contentfulPostBodyTextNode implements Node
-    @childOf(types: ["ContentfulPost"]) {
-      id: ID!
-    }
-    type contentfulPageMetaDescriptionTextNode implements Node
-    @childOf(types: ["ContentfulPage"]) {
-      id: ID!
-    }
-    type contentfulPageBodyTextNode implements Node
-    @childOf(types: ["ContentfulPage"]) {
-      id: ID!
-    }
-    type contentfulPostMetaDescriptionTextNode implements Node
-    @childOf(types: ["ContentfulPost"]) {
-      id: ID!
-    }
-    type MarkdownRemark implements Node
-    @childOf(types: [
-      "contentfulPostBodyTextNode",
-      "contentfulPostMetaDescriptionTextNode",
-      "contentfulPageBodyTextNode",
-      "contentfulPageMetaDescriptionTextNode"
-    ]) {
-      id: ID!
-    }
-  `
-  actions.createTypes(typeDefs)
+  // const typeDefs = `
+  //   type contentfulPostBodyTextNode implements Node
+  //   @childOf(types: ["ContentfulPost"]) {
+  //     id: ID!
+  //   }
+  //   type contentfulPageMetaDescriptionTextNode implements Node
+  //   @childOf(types: ["ContentfulPage"]) {
+  //     id: ID!
+  //   }
+  //   type contentfulPageBodyTextNode implements Node
+  //   @childOf(types: ["ContentfulPage"]) {
+  //     id: ID!
+  //   }
+  //   type contentfulPostMetaDescriptionTextNode implements Node
+  //   @childOf(types: ["ContentfulPost"]) {
+  //     id: ID!
+  //   }
+  //   type MarkdownRemark implements Node
+  //   @childOf(types: [
+  //     "contentfulPostBodyTextNode",
+  //     "contentfulPostMetaDescriptionTextNode",
+  //     "contentfulPageBodyTextNode",
+  //     "contentfulPageMetaDescriptionTextNode"
+  //   ]) {
+  //     id: ID!
+  //   }
+  // `
+  // actions.createTypes(typeDefs)
 }
