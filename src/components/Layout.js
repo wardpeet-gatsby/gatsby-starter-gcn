@@ -6,11 +6,11 @@ import Footer from '../components/Footer'
 import { globalStyles } from '../styles/globalStyles.js'
 
 const Root = styled.div`
-  font-family: ${props => props.theme.fonts.body};
+  font-family: ${(props) => props.theme.fonts.body};
 `
 
 const Skip = styled.a`
-  font-family: ${props => props.theme.fonts.body};
+  font-family: ${(props) => props.theme.fonts.body};
   padding: 0 1rem;
   line-height: 60px;
   background: #2867cf;
@@ -28,7 +28,7 @@ const Skip = styled.a`
   }
 `
 
-const Layout = props => {
+const Layout = (props) => {
   function handleFirstTab(e) {
     if (e.keyCode === 9) {
       document.body.classList.add('user-is-tabbing')
@@ -38,6 +38,7 @@ const Layout = props => {
 
   return (
     <Root className="siteRoot">
+      <Global styles={globalStyles} />
       <div className="siteContent">
         <Skip href="#main" id="skip-navigation">
           Skip to content
@@ -46,7 +47,6 @@ const Layout = props => {
         <div id="main">{props.children}</div>
       </div>
       <Footer />
-      <Global styles={globalStyles} />
     </Root>
   )
 }
